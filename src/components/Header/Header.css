@@ -1,0 +1,92 @@
+.header{
+    display: flex;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* margin: ; */
+    padding: 20px 0;
+    background-color: rgb(99, 215, 166);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.logo img {
+    max-width: 8%; /* Ensure the image fits within the container */
+    height: auto; /* Ensure the image does not distort */
+}
+
+.title{
+    font-size: 50px;
+    font-weight: 590;
+    color: white;
+    margin-left: 20px;
+    margin-top: 8px;
+    font-family: 'Bebas Neue', cursive;
+    /* margin-left: none ; */
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10px;
+    margin-left: 23%;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+  
+.search-icon {
+    position: absolute;
+    left: 10px;
+    color: #888;
+}
+
+.search-input {
+    padding-left: 30px; /* Adjust based on icon size and position */
+    padding-right: 10px;
+    margin-top: -1px;
+    height: 30px; /* Adjust based on your design */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Lato', sans-serif;
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.header-right p {
+    margin-right: 15px;
+    margin-top: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Lato', sans-serif;
+}
+
+.login-button {
+    background: transparent;
+    margin-left: 10px;
+    font-size: 16px;
+    color: white;
+    border: 1px solid rgb(23, 126, 78);
+    padding: 10px 30px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-button:hover {
+    background: #1eb480;
+  }
