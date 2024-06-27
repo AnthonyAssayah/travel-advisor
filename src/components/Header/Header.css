@@ -18,6 +18,7 @@
 .logo img {
     max-width: 8%; /* Ensure the image fits within the container */
     height: auto; /* Ensure the image does not distort */
+    cursor: pointer;
 }
 
 .title{
@@ -27,7 +28,6 @@
     margin-left: 20px;
     margin-top: 8px;
     font-family: 'Bebas Neue', cursive;
-    /* margin-left: none ; */
 }
 
 .header-right {
@@ -52,10 +52,10 @@
 }
 
 .search-input {
-    padding-left: 30px; /* Adjust based on icon size and position */
+    padding-left: 30px; 
     padding-right: 10px;
     margin-top: -1px;
-    height: 30px; /* Adjust based on your design */
+    height: 30px; 
     border: 1px solid #ccc;
     border-radius: 4px;
     font-family: 'Lato', sans-serif;
