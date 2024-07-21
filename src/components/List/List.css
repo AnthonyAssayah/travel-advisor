@@ -1,4 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 .list{
     display: flex;
     margin-top: 20px;
+}
+
+.list-container p{
+    font-size: 25px;
+    font-weight: 200;
+    margin-bottom: 5px;
+    margin-top: -10px;
+    margin-left: 5px;
+    letter-spacing: 1px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.list-container select{
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: -10px;
+    margin-left: 5px;
+    font-family:  'Outfit';
 }

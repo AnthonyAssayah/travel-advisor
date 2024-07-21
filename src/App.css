@@ -5,3 +5,18 @@
   font-family: Outfit;
   scroll-behavior: smooth; /* Smooth scrolling */
 }
+
+
+.main-container{
+  display: flex;
+  margin-top: 5px;
+}
+
+.main-container .list{
+  flex: 1;
+}
+
+.main-container .map{
+  flex: 2;
+  margin-left: 20px;
+}

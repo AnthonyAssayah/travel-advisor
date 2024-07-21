@@ -1,6 +1,10 @@
-.map{
-    display: flex;
-    /* flex-wrap: wrap; */
-    margin-top: 40px;
-    ;
-}
+.map {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .map-container {
+    height: 100vh; /* Adjust height as needed */
+    width: 100%;
+  }
+  

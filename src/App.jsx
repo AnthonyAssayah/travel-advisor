@@ -9,8 +9,11 @@ const App = () => {
   return (
     <>
         <Header />
-        <List />
-        <Map />
+        <div className="main-container">
+          <List />
+          <Map />
+        </div>
+        <PlaceDetails />
     </>
   );
 };
