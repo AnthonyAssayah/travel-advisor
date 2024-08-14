@@ -16,7 +16,7 @@
 }
 
 .logo img {
-    max-width: 8%; /* Ensure the image fits within the container */
+    max-width: 50px; /* Ensure the image fits within the container */
     height: auto; /* Ensure the image does not distort */
     cursor: pointer;
 }
@@ -35,7 +35,7 @@
     flex-direction: row;
     align-items: flex-start;
     margin-top: 10px;
-    margin-left: 23%;
+    margin-left: 880px;
 }
 
 .search-container {
