@@ -6,17 +6,35 @@
   scroll-behavior: smooth; /* Smooth scrolling */
 }
 
-
-.main-container{
-  display: flex;
-  margin-top: 5px;
+body {
+  overflow: hidden; /* Prevent body from scrolling */
 }
 
-.main-container .list{
+.header {
+  width: 100%;
+  position: fixed; /* Fixed at the top */
+  top: 0;
+  z-index: 1000; /* Make sure it's above other elements */
+  background-color: white; /* Add background color for header */
+  height: 60px; /* Adjust header height as needed */
+  display: flex;
+  align-items: center; /* Vertically center header content */
+  padding: 0 20px; /* Add some padding */
+  border-bottom: 1px solid #ddd; /* Optional border for header */
+}
+
+.main-container {
+  display: flex;
+  margin-top: 60px; /* Adjust based on header height */
+  height: calc(100vh - 60px); /* Full viewport height minus header */
+}
+
+.main-container .list {
   flex: 1;
 }
 
-.main-container .map{
+.main-container .map {
   flex: 2;
   margin-left: 20px;
+  overflow: hidden; /* Prevent map from scrolling */
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./List.css";
+import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-const List = () => {
+const List = ({ places }) => {
   const [type, setType] = useState("Restaurants");
   const [rating, setRating] = useState("");
   const [price, setPrice] = useState("");
@@ -74,6 +75,13 @@ const List = () => {
             <option value="6">Indian</option>
           </select>
         )}
+        <div className="list-container-card">
+          {places?.map((place, index) => (
+            <div key={index}>
+              <PlaceDetails place={place} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

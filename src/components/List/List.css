@@ -9,10 +9,11 @@
     font-size: 25px;
     font-weight: 200;
     margin-bottom: 5px;
-    margin-top: -10px;
+    margin-top: -5px;
     margin-left: 5px;
     letter-spacing: 1px;
     font-family: 'Bebas Neue', cursive;
+    overflow-y: auto; /* Allow scrolling only on list */
 }
 
 .list-container select{
@@ -22,3 +23,13 @@
     margin-left: 5px;
     font-family:  'Outfit';
 }
+
+.list-container-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add space between cards */
+    overflow-y: auto; /* Enable scrolling for list */
+    height: calc(100vh - 130px); /* Adjust height for scrollable area */
+    padding: 0 10px;
+    box-sizing: border-box;
+  }

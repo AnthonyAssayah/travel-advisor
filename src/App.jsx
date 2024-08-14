@@ -16,22 +16,28 @@ const App = () => {
     navigator.geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => {
       setCoordinates({lat: latitude, lng: longitude});
     })
-  })
+  },[])
 
-  useEffect(() => { 
-    console.log(coordinates, bounds)
+  useEffect(() => {
+    if (bounds && bounds.ne && bounds.sw) { // Check if bounds are defined
+      console.log("Coordinates: ", coordinates);
+      console.log("Bounds: ", bounds);
 
-    getPlacesData().then((data) => {
-      console.log(data);
-      getPlaces(data);
-    })
-    },[coordinates, bounds]);
+      // Call the API with proper bounds
+      getPlacesData(bounds.ne, bounds.sw).then((data) => {
+        console.log("Places Data: ", data);
+        getPlaces(data); // Update the places state
+      }).catch((error) => {
+        console.error("Error fetching places data:", error);
+      });
+    }
+  }, [coordinates, bounds]); // Dependency array includes coordinates and bounds
 
   return (
     <>
         <Header />
         <div className="main-container">
-          <List />
+          <List places={places}/>
           <Map setCoordinates={setCoordinates} setBounds={setBounds} coordinates={coordinates}/>
         </div>
         <PlaceDetails />
