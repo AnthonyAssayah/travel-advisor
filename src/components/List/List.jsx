@@ -6,7 +6,6 @@ const List = ({ places }) => {
   const [type, setType] = useState("Restaurants");
   const [rating, setRating] = useState("");
   const [price, setPrice] = useState("");
-  const [food, setFood] = useState("");
 
   const getText = () => {
     switch (type) {
@@ -56,23 +55,6 @@ const List = ({ places }) => {
             <option value="2">$$</option>
             <option value="3">$$$</option>
             <option value="4">$$$$</option>
-          </select>
-        )}
-        {type === "Restaurants" && (
-          <select
-            value={food}
-            onChange={(e) => setFood(e.target.value)}
-            required
-          >
-            <option value="" disabled>
-              Food
-            </option>
-            <option value="1">American</option>
-            <option value="2">Chinese</option>
-            <option value="3">Italian</option>
-            <option value="4">Mexican</option>
-            <option value="5">Japanese</option>
-            <option value="6">Indian</option>
           </select>
         )}
         <div className="list-container-card">
