@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Travel App Advisor
+<br/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents  
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Project Structure](#project-structure)
+- [Demo](#demo)
+- [Technologies - Librairies](#technologies-librairies)
+- [Installation](#installation)
+<br/>
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+Welcome to our travel advisor app, a dynamic and interactive platform built with React.js and integrated with the Google Maps API. This application allows users to explore restaurants, hotels, and attractions within a specific area. You can view detailed cards for each restaurant, complete with the name, address, rating, price level, type of food, and links to their website and TripAdvisor page. The app also features powerful filtering options, enabling you to refine your search based on rating and price. Experience the convenience of navigating through your favorite destinations with ease.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+### 1. API (Backend)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**File: `index.js`**  
+- Contains the `getPlacesData` function, which makes API calls to fetch data for restaurants, hotels, and attractions within the specified geographical boundary.
+- Uses `axios` for making HTTP requests to the Travel Advisor API.
+- Handles API response and error handling for fetching places data.
 
-### `npm run build`
+### 2. Frontend Components (React)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### a. Header Component
+**File: `Header.js`**  
+- Displays the header section of the app, including the logo and title "Travel Advisor."
+- Includes a search input field for exploring new places and a login button.
+- Uses FontAwesome icons for the search icon.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### b. List Component
+**File: `List.js`**  
+- Displays a list of places (restaurants, hotels, and attractions) based on the selected type and filters (rating and price).
+- Contains dropdowns for filtering places by type, rating, and price.
+- Filters the displayed places based on the selected rating and price.
+- Maps over the filtered places and renders each one using the `PlaceDetails` component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### c. Map Component
+**File: `Map.js`**  
+- Integrates Google Maps using the `GoogleMapReact` component.
+- Displays the map centered on the user’s current coordinates.
+- Handles map changes (zoom, pan) and updates the geographical boundaries (coordinates and bounds) for fetching nearby places.
 
-### `npm run eject`
+#### d. PlaceDetails Component
+**File: `PlaceDetails.js`**  
+- Displays detailed information about each place, including:
+  - Name
+  - Image (fallback if no image is provided)
+  - Price level
+  - Ranking
+  - Rating
+  - Cuisine type (chips displaying types of food)
+  - Address and phone number (using FontAwesome icons for location and phone)
+- Includes buttons that link to the place's TripAdvisor and website.
+- Ensures graceful handling of missing data by conditionally rendering components.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Demo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+https://github.com/user-attachments/assets/ad3d1134-14f1-4bf6-95b8-7c662711951c
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies-Librairies
+<br/>
+- **react**: The core library for building the user interface.
+- **axios**: For making HTTP requests to fetch data from the Travel Advisor API.
+- **google-map-react**: A library to integrate Google Maps into the app.
+- **@fortawesome**: For including FontAwesome icons in the project.
+- **@react-google-maps/api**: For handling Google Maps-related functionality.
+- **axios-retry**: For adding retry logic to axios requests in case of failures.
+- **Other dependencies**: Includes `react-dom`, `react-scripts`, `web-vitals`, and testing libraries such as `@testing-library/react`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To run this project locally, follow these steps:
 
-### Analyzing the Bundle Size
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/travel-advisor-app.git
+   cd travel-advisor-app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Install dependencies**: Ensure you have Node.js installed, then run:
+    ```bash
+    npm install
 
-### Making a Progressive Web App
+3. **Set up environment variables**:
+    . Obtain a Google Maps API key and RapidAPI key for the Travel Advisor API.
+    . Create a .env file in the root directory and add your keys:
+    ```bash
+    REACT_APP_GOOGLE_MAPS_API_KEY=your-google-maps-api-key
+    REACT_APP_RAPIDAPI_KEY=your-rapidapi-key
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. **Start the development server**:
+    ```bash
+    npm start
 
-### Advanced Configuration
+5. **Access the app**: Once the server is running, open your browser and navigate to:
+    ```bash
+    http://localhost:3000
+    
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Your app should now be up and running locally!
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
