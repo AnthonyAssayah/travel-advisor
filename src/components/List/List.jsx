@@ -20,6 +20,18 @@ const List = ({ places }) => {
     }
   };
 
+  // Filter places based on rating and price
+  const filteredPlaces = places?.filter((place) => {
+    const meetsRatingCriteria = rating
+      ? parseFloat(place.rating) === parseFloat(rating)
+      : true;
+    const meetsPriceCriteria = price
+      ? place.price_level === price
+      : true;
+
+    return meetsRatingCriteria && meetsPriceCriteria;
+  });
+
   return (
     <div className="list">
       <div className="list-container">
@@ -41,6 +53,7 @@ const List = ({ places }) => {
           <option value={3}>Above 3.0</option>
           <option value={4}>Above 4.0</option>
           <option value={4.5}>Above 4.5</option>
+          <option value={5.0}>Above 5.0</option>
         </select>
         {type === "Restaurants" && (
           <select
@@ -51,14 +64,15 @@ const List = ({ places }) => {
             <option value="" disabled>
               Price
             </option>
-            <option value="1">$</option>
-            <option value="2">$$</option>
-            <option value="3">$$$</option>
-            <option value="4">$$$$</option>
+            <option value={""}>All</option>
+            <option value={"$"}>$</option>
+            <option value={"$$ - $$$"}>$$-$$$</option>
+            <option value={"$$$$"}>$$$$</option>
+            
           </select>
         )}
         <div className="list-container-card">
-          {places?.map((place, index) => (
+          {filteredPlaces?.map((place, index) => (
             <div key={index}>
               <PlaceDetails place={place} />
             </div>
