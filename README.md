@@ -69,15 +69,17 @@ https://github.com/user-attachments/assets/ad3d1134-14f1-4bf6-95b8-7c662711951c
 <br/>
 
 ## Technologies-Librairies
-<br/>
-. **react**: The core library for building the user interface.
-. **axios**: For making HTTP requests to fetch data from the Travel Advisor API.
-. **google-map-react**: A library to integrate Google Maps into the app.
-. **@fortawesome**: For including FontAwesome icons in the project.
-. **@react-google-maps/api**: For handling Google Maps-related functionality.
-. **axios-retry**: For adding retry logic to axios requests in case of failures.
-. **Other dependencies**: Includes `react-dom`, `react-scripts`, `web-vitals`, and testing libraries such as `@testing-library/react`.
 
+
+- **react**: The core library for building the user interface.
+- **axios**: For making HTTP requests to fetch data from the Travel Advisor API.
+- **google-map-react**: A library to integrate Google Maps into the app.
+- **@fortawesome**: For including FontAwesome icons in the project.
+- **@react-google-maps/api**: For handling Google Maps-related functionality.
+- **axios-retry**: For adding retry logic to axios requests in case of failures.
+- **Other dependencies**: Includes react-dom, react-scripts, web-vitals, and testing libraries such as @testing-library/react.
+
+<br/>
 
 ## Installation
 
