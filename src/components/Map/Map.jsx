@@ -2,13 +2,14 @@ import React from "react";
 import "./Map.css";
 import GoogleMapReact from "google-map-react";
 
+
 const Map = ({setCoordinates, setBounds, coordinates}) => {
 
   return (
     <div className="map">
       <div className="map-container">
         <GoogleMapReact 
-          bootstrapURLKeys={{ key: "AIzaSyCHBy6F2Wo44Leb7b1BWuYg1XAFooc4rr0" }}
+          bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
           defaultCenter={coordinates}
           defaultZoom={14}
           center={coordinates}
